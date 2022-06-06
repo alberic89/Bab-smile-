@@ -1,9 +1,8 @@
-
 {
 
   "manifest_version": 2,
   "name": "Bàb smile +",
-  "version": "1.22.06.05",
+  "version": "1.22.06.06",
 
   "description": "Ajoute la totalité des smileys sur Brick à Brack !",
 
@@ -21,5 +20,4 @@
       "js": ["main.js"]
     }
   ]
-
 }
