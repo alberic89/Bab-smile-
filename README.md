@@ -8,6 +8,7 @@
 - Ouvrez le .zip,
 - Lancez Chrome (ou un dérivé tel que Brave, etc),
 - Dans Chrome, allez à la page [chrome://extensions/](chrome://extensions/)
+- ***Activez le mode dévellopeur, puis redémarrez chrome,***
 - Faites un glisser-déposer avec le fichier B-b-smile--.crx dans la page,
 - Acceptez l'installation,
 - Et voilà !
