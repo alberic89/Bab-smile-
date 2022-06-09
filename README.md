@@ -13,7 +13,7 @@
 - Acceptez l'installation,
 - Et voilà !
 
-### Firefox :
+### Firefox (**sera disponible sous peu sur le site de mozilla !**):
 - Allez à [https://github.com/alberic89/B-b-smile--/tree/main](https://github.com/alberic89/B-b-smile--/tree/main) et téléchargez le code source avec le bouton Code => Download Zip,
 - Extrayez le .zip dans un dossier où il resterat,
 - Supprimez les fichiers inutiles README.md et .gitattributes, ainsi que le dossier "ressources" si vous ne comptez pas apporter des modifications,
