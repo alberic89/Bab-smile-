@@ -31,6 +31,7 @@
 - Comme Url (ou "Location"), collez le texte copié précédament, puis validez, ⚠️ ***vérifiez que votre navigateur ne remplace pas le texte par une page de style about:blank ou autre*** ⚠️
 - Lorsque vous voudrez activer l'extension, cliquez simplement une fois sur le marque-page.
 
+# Envoyer-moi un message si vous voulez que j'adapte cette extension à un autre navigateur ! (je ne les connais pas tous)
 # **Signalez moi tout bug ou erreurs à l'installation, _il est impossible de corriger des bugs si on ne sait pas qu'ils existent_ !!!**
 
 ## Captures d'écran :
