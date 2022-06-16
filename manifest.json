@@ -1,7 +1,9 @@
 {
   "manifest_version": 2,
   "name": "Bàb smile +",
-  "version": "1.22.6.9",
+  "version": "2.22.6.16",
+  
+  "update_url": "https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b_smile_+.crx?raw=true",
 
   "description": "Ajoute la totalité des smileys sur Brick à Brack !",
 
@@ -15,6 +17,11 @@
 
   "content_scripts": [
     {
+      "matches": ["*://brick-a-brack.com/inbox/*"],
+      "js": ["jquery-3.6.0.js","mainms.js"]
+    },
+    {
+      "exclude_matches": ["*://brick-a-brack.com/inbox/*"],
       "matches": ["*://brick-a-brack.com/*"],
       "js": ["jquery-3.6.0.js","main.js"]
     }
