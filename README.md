@@ -13,7 +13,7 @@
 - Acceptez l'installation,
 - Et voilà !
 
-### Firefox :
+### Firefox (**sera disponible sous peu sur le site de mozilla !**):
 - Allez à [https://github.com/alberic89/B-b-smile--/tree/main](https://github.com/alberic89/B-b-smile--/tree/main) et téléchargez le code source avec le bouton Code => Download Zip,
 - Extrayez le .zip dans un dossier où il resterat,
 - Supprimez les fichiers inutiles README.md et .gitattributes, ainsi que le dossier "ressources" si vous ne comptez pas apporter des modifications,
@@ -31,6 +31,7 @@
 - Comme Url (ou "Location"), collez le texte copié précédament, puis validez, ⚠️ ***vérifiez que votre navigateur ne remplace pas le texte par une page de style about:blank ou autre*** ⚠️
 - Lorsque vous voudrez activer l'extension, cliquez simplement une fois sur le marque-page.
 
+# Envoyer-moi un message si vous voulez que j'adapte cette extension à un autre navigateur ! (je ne les connais pas tous)
 # **Signalez moi tout bug ou erreurs à l'installation, _il est impossible de corriger des bugs si on ne sait pas qu'ils existent_ !!!**
 
 ## Captures d'écran :
