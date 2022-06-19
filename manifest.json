@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
   "name": "Bàb smile +",
-  "version": "2.22.6.19.2",
+  "version": "2.22.6.19.5",
   
   "update_url": "https://github.com/alberic89/B-b-smile--/blob/main/updates.xml",
 
-  "description": "Ajoute la totalité des smileys sur Brick à Brack !",
+  "description": "Ajoute la totalité des smileys sur Brick à Brack ! (expérimental)",
 
   "icons": {
     "16": "icons/logo16.png",
