@@ -4,14 +4,15 @@
 ## Instructions d'installation (valables pour tous les OS)
 
 ### Chrome :
-- Allez à [https://github.com/alberic89/B-b-smile--/tree/chrome](https://github.com/alberic89/B-b-smile--/tree/chrome) et téléchargez le fichier avec le bouton Code => Download Zip,
-- Ouvrez le .zip,
+- Allez à [https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b_smile_+.crx?raw=true](https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b_smile_+.crx?raw=true) , un fichier devrait être téléchargé,
 - Lancez Chrome (ou un dérivé tel que Brave, etc),
 - Dans Chrome, allez à la page [chrome://extensions/](chrome://extensions/)
 - ***Activez le mode dévellopeur*** (bouton en haut à droite)***, puis redémarrez chrome,***
 - Faites un glisser-déposer avec le fichier B-b-smile--.crx dans la page,
 - Acceptez l'installation,
 - Et voilà !
+#### Tuto vidéo :
+https://user-images.githubusercontent.com/90179203/175010893-e1c5d5e0-ba1c-4aa8-92c7-4780c3d3ba58.mp4
 
 ### Firefox (**sera disponible sous peu sur le site de mozilla !**):
 - Allez à [https://github.com/alberic89/B-b-smile--/tree/main](https://github.com/alberic89/B-b-smile--/tree/main) et téléchargez le code source avec le bouton Code => Download Zip,
@@ -36,3 +37,7 @@
 
 ## Captures d'écran :
 ![test](https://user-images.githubusercontent.com/90179203/172145114-b1099908-1a1b-4583-ad60-c41a0ed1431c.png)
+
+
+
+
