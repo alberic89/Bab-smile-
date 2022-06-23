@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Bàb smile +",
-  "version": "2.22.6.20",
+  "version": "2.22.6.23",
   
   "update_url": "https://raw.githubusercontent.com/alberic89/B-b-smile--/main/updates.xml",
 
@@ -17,11 +17,6 @@
 
   "content_scripts": [
     {
-      "matches": ["*://brick-a-brack.com/inbox/*"],
-      "js": ["jquery-3.6.0.js","mainms.js"]
-    },
-    {
-      "exclude_matches": ["*://brick-a-brack.com/inbox/*"],
       "matches": ["*://brick-a-brack.com/*"],
       "js": ["jquery-3.6.0.js","main.js"]
     }
