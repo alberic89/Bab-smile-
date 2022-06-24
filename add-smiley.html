@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
+    </script>
+</head>
+
+<body onload="brython()">
+
+<script type="text/python">
+
+from browser import document
+from browser.widgets.dialog import InfoDialog
+
+def click(ev):
+    InfoDialog("Hello", f"Bonjour, {document['zone'].value} !")
+
+# associe une fonction à l'événement "click" sur le bouton
+document["echo"].bind("click", click)
+</script>
+<input id="zone">
+<button id="echo">click !</button>
+
+</body>
+
+<script>
+
+// Requiring fs module in which
+// readFile function is defined.
+
+  
+// Reading data in utf-8 format
+// which is a type of character set.
+// Instead of 'utf-8' it can be 
+// other character set also like 'ascii'
+fs.readFile('liste.txt', 'utf-8', (err, data) => {
+    if (err) throw err;
+  
+    // Converting Raw Buffer to text
+    // data using tostring function.
+    console.log(data);
+})
+</script>
+
+
+</html>
