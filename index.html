@@ -1,33 +1,88 @@
 <!DOCTYPE html>
+
 <html>
-  
+
 <head>
-  <title>Sending Mail</title>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script type="text/javascript">
-    function sendEmail() {
-      Email.send({
-        Host: "mail.gmx.com",
-        Username: "babsmile@gmx.fr",
-        Password: "babsmile@gmx.fr",
-        To: "babsmile@gmx.fr",
-        From: "babsmile@gmx.fr",
-        Subject: "Sending Email using javascript",
-        Body: "Well that was easy!!",
-	html: "<h1>GeeksforGeeks</h1><p>A computer science portal</p>",
-      })
-        .then(function (message) {
-          alert("Mail has been sent successfully")
-        });
-    }
-  </script>
+    <meta charset="utf-8">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.10.6/brython.min.js">
+        src="https://cdn.jsdelivr.net/npm/brython@3.2.6/brython.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.10.6/brython_stdlib.js">
+        src="https://cdn.jsdelivr.net/npm/brython@3.2.6/brython_stdlib.js">
+    </script>
 </head>
-  
+
+<body onload="brython()">
+
+<script type="text/python">
+from browser import document
+from browser.widgets.dialog import InfoDialog
+import smtplib, ssl
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+def click(ev):
+	url = str(document['zone'].value)
+	if url != '' and 'http' in url :
+		
+		# on rentre les renseignements pris sur le site du fournisseur
+		smtp_address = 'mail.gmx.com'
+		smtp_port = 465
+
+# on rentre les informations sur notre adresse e-mail
+		email_address = 'babsmile@gmx.fr'
+		email_password = 'it is a fake mdp'
+
+# on rentre les informations sur le destinataire
+		email_receiver = 'babsmile@gmx.fr'
+
+
+# on crée un e-mail
+		message = MIMEMultipart("alternative")
+# on ajoute un sujet
+		message["Subject"] = url
+# un émetteur
+		message["From"] = email_address
+# un destinataire
+		message["To"] = email_receiver
+
+# on crée un texte et sa version HTML
+		texte = url
+
+		html = '''
+<html>
 <body>
-  <form method="post">
-    <input type="button" value="Send Mail"
-        onclick="sendMail()" />
-  </form>
+<p>''' + url + '''</p>
 </body>
-  
-</html> 
+</html>
+'''
+
+# on crée deux éléments MIMEText 
+		texte_mime = MIMEText(texte, 'plain')
+		html_mime = MIMEText(html, 'html')
+
+# on attache ces deux éléments 
+		message.attach(texte_mime)
+		message.attach(html_mime)
+
+# on crée la connexion
+		context = ssl.create_default_context()
+		with smtplib.SMTP_SSL(smtp_address, smtp_port, context=context) as server:
+  # connexion au compte
+			server.login(email_address, email_password)
+  # envoi du mail
+			server.sendmail(email_address, email_receiver, message.as_string())
+		
+		InfoDialog("Envoyé", f"Le smiley à "+url+" a bien été  envoyé !")
+
+# associe une fonction à l'événement "click" sur le bouton
+document["echo"].bind("click", click)
+
+</script>
+<input id="zone">
+<button id="echo">Envoyer !</button>
+</body>
+
+</html>
