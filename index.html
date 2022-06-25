@@ -1,28 +1,23 @@
 <!DOCTYPE html>
-
-<!DOCTYPE html>
-
 <html>
   
 <head>
-  <title>Send Mail</title>
-  <script src=
-    "https://smtpjs.com/v3/smtp.js">
-  </script>
-  
+  <title>Sending Mail</title>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script type="text/javascript">
     function sendEmail() {
       Email.send({
         Host: "mail.gmx.com",
         Username: "babsmile@gmx.fr",
-        Password: "it is a fake mdp",
+        Password: "babsmile@gmx.fr",
         To: "babsmile@gmx.fr",
         From: "babsmile@gmx.fr",
         Subject: "Sending Email using javascript",
         Body: "Well that was easy!!",
+	html: "<h1>GeeksforGeeks</h1><p>A computer science portal</p>",
       })
         .then(function (message) {
-          alert("mail sent successfully")
+          alert("Mail has been sent successfully")
         });
     }
   </script>
@@ -30,9 +25,9 @@
   
 <body>
   <form method="post">
-    <input type="button" value="Send Email" 
-        onclick="sendEmail()" />
+    <input type="button" value="Send Mail"
+        onclick="sendMail()" />
   </form>
 </body>
   
-</html>
+</html> 
