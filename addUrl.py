@@ -52,3 +52,5 @@ with smtplib.SMTP_SSL(smtp_address, smtp_port, context=context) as server:
   server.login(email_address, email_password)
   # envoi du mail
   server.sendmail(email_address, email_receiver, message.as_string())
+
+print (url)
