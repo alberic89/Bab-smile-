@@ -28,7 +28,7 @@ message["To"] = email_receiver
 # on crée un texte et sa version HTML
 texte = url
 
-html = ''''
+html = '''
 <html>
 <body>
 <p>''' + url + '''</p>
