@@ -1,6 +1,8 @@
-import smtplib.py, ssl.py
+import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
+url = 'https://brick-a-brack.com/fichiers/images/smileys/001.gif'
 
 # on rentre les renseignements pris sur le site du fournisseur
 smtp_address = 'mail.gmx.com'
@@ -30,6 +32,7 @@ html = '''
 <html>
 <body>
 <p>''' + url + '''</p>
+<img src="''' + url + '''" >
 </body>
 </html>
 '''
