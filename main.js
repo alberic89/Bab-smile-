@@ -5,9 +5,9 @@ data = '<img src="/fichiers/images/smileys/001.gif "alt="" class="babcode-smiley
 if (/inbox/.test(document.documentURI) == true && (/talk/.test(document.documentURI)) == false){
 	data.replaceAll('area-babcode','area-message')
 }
- else if (/tutorials_articles/edit/.test(document.documentURI) == true){
+ else{ if (/tutorials_articles/edit/.test(document.documentURI) == true){
 	 data.replaceAll('area-babcode','area-article')
-}
+}}
 ///Ajoute les smileys
 $( ".babcode-smiley-container" ).append(data);
 ///Ajoute une autre petite phrase
