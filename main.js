@@ -1,5 +1,5 @@
 ///Ajoute une petite phrase
-$( ".babcode-smiley-container" ).html( "<p><strong>Oh! Des centaines de smileys en plus!!!</strong></p>" );
+$( ".babcode-smiley-container" ).append( "<p><strong>Oh! Des centaines de smileys en plus!!!</strong></p>" );
 
 let data
 
@@ -28,6 +28,6 @@ if (/inbox/.test(document.documentURI) == true && (/talk/.test(document.document
 	 data.replaceAll('area-babcode','area-article');
 }}
 ///Ajoute les smileys
-$( ".babcode-smiley-container" ).html(data);
+$( ".babcode-smiley-container" ).append(data);
 ///Ajoute une autre petite phrase
-$( ".babcode-smiley-container" ).html( "<p><strong>Envoyez un mp à @alberic89 si vous voyez un bug ou si vous voulez ajouter un smiley !</strong></p>" );
+$( ".babcode-smiley-container" ).append( "<p><strong>Envoyez un mp à @alberic89 si vous voyez un bug ou si vous voulez ajouter un smiley !</strong></p>" );
