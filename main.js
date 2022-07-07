@@ -1,5 +1,5 @@
-$(document).ready(function() {
-///Ajoute une petite phrase
+function main() {
+    ///Ajoute une petite phrase
 $( ".babcode-smiley-container" ).append( "<p><strong>Oh! Des centaines de smileys en plus!!!</strong></p>" );
 
 let data
@@ -51,5 +51,6 @@ if (window.location.pathname.includes('inbox') == true && window.location.pathna
 $( ".babcode-smiley-container" ).append(data);
 ///Ajoute une autre petite phrase
 $( ".babcode-smiley-container" ).append( "<p><strong>Envoyez un mp à @alberic89 si vous voyez un bug ou si vous voulez ajouter un smiley !</strong></p>" );
-$( ".babcode-smiley-container" ).append(data2); 
-});
+$( ".babcode-smiley-container" ).append(data2);
+}
+main();
