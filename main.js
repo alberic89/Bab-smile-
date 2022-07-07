@@ -3,7 +3,7 @@ $( ".babcode-smiley-container" ).append( "<p><strong>Oh! Des centaines de smiley
 
 let data
 
-function readTextFile(file) {
+function readTextFile(file, variable) {
 var rawFile = new XMLHttpRequest();
 rawFile.open("GET", file, false);
 rawFile.onreadystatechange = function ()
@@ -12,14 +12,14 @@ rawFile.onreadystatechange = function ()
     {
         if(rawFile.status === 200 || rawFile.status == 0)
         {
-            data = rawFile.responseText;
+            variable = rawFile.responseText;
         }
     }
 }
 rawFile.send(null);
 }
 
-readTextFile("https://raw.githubusercontent.com/alberic89/B-b-smile--/main/ressources/urls.txt") ///récupère la dernière version de url.txt
+readTextFile("https://raw.githubusercontent.com/alberic89/B-b-smile--/main/ressources/urls.txt", data) ///récupère la dernière version de url.txt
 
 if (/inbox/.test(document.documentURI) == true && (/talk/.test(document.documentURI)) == false){ ///vérifie que ce n'est pas une page spéciale, et agis en conséquence
 	data.replaceAll('area-babcode','area-message');
