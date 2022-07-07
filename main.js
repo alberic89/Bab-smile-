@@ -1,3 +1,4 @@
+$(document).ready(function() {
 ///Ajoute une petite phrase
 $( ".babcode-smiley-container" ).append( "<p><strong>Oh! Des centaines de smileys en plus!!!</strong></p>" );
 
@@ -37,14 +38,14 @@ rawFile.send(null);
 }
 readTextFile("https://raw.githubusercontent.com/alberic89/B-b-smile--/main/ressources/urls.txt"); ///récupère la dernière version de url.txt
 readTextFile2("https://raw.githubusercontent.com/alberic89/B-b-smile--/main/ressources/customs-urls.txt");
-$(document).ready(function() {
-if (/inbox/.test(document.documentURI) == true && (/talk/.test(document.documentURI)) == false){ ///vérifie que ce n'est pas une page spéciale, et agis en conséquence
-	data.replaceAll('area-babcode','area-message');
-	data2.replaceAll('area-babcode','area-message');
+
+if (window.location.pathname.includes('inbox') == true && window.location.pathname.includes('talk') == false){ ///vérifie que ce n'est pas une page spéciale, et agis en conséquence
+	data = data.replaceAll('area-babcode','area-message');
+	data2 = data2.replaceAll('area-babcode','area-message');
 }
  else{ if (/tutorials_articles/.test(document.documentURI) == true){
-	 data.replaceAll('area-babcode','area-article');
-	 data2.replaceAll('area-babcode','area-article');
+	 data = data.replaceAll('area-babcode','area-article');
+	 data2 = data2.replaceAll('area-babcode','area-article');
 }}
 ///Ajoute les smileys
 $( ".babcode-smiley-container" ).append(data);
