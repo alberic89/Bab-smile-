@@ -1,3 +1,4 @@
+function main(){ 
 let data;
 let data2;
 let file = "https://raw.githubusercontent.com/alberic89/B-b-smile--/main/ressources/urls.txt" ;
@@ -40,4 +41,5 @@ $( ".babcode-smiley-container" ).append( "<p><strong>Oh! Des centaines de smiley
 $( ".babcode-smiley-container" ).append(data);
 ///Ajoute une autre petite phrase
 $( ".babcode-smiley-container" ).append( "<p><strong>Envoyez un mp à @alberic89 si vous voyez un bug ou si vous voulez ajouter un smiley !</strong></p>" );
-$( ".babcode-smiley-container" ).append(data2);
+$( ".babcode-smiley-container" ).append(data2);};
+main();
