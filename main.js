@@ -36,7 +36,7 @@ if (window.location.pathname.includes('inbox') == true && window.location.pathna
 	 data = data.replaceAll('area-babcode','area-article');
 	 data2 = data2.replaceAll('area-babcode','area-article');
 }}
-$( ".babcode-smiley-container" ).append( "<p><strong>Oh! Des centaines de smileys en plus!!!</strong></p>" );
+$(".babcode-smiley-container").append('<br />');
 ///Ajoute les smileys
 $( ".babcode-smiley-container" ).append(data);
 $( ".babcode-smiley-container" ).append(data2);
