@@ -1,4 +1,3 @@
-function main(){ 
 let data;
 let data2;
 let file = "https://raw.githubusercontent.com/alberic89/B-b-smile--/main/ressources/urls.txt" ;
@@ -41,6 +40,4 @@ $(".babcode-smiley-container").append('<br />');
 $( ".babcode-smiley-container" ).append(data);
 $( ".babcode-smiley-container" ).append(data2);
 ///Ajoute une autre petite phrase
-$( ".babcode-smiley-container" ).append( "<p>Envoyez un mp à <a href='https://brick-a-brack.com/inbox/talk/3520/'>@alberic89</a> si vous voyez un bug ou si vous voulez ajouter un smiley !</p>" );
-};
-main();
+$( ".babcode-smiley-container" ).append( "<p>Envoyez un mp à <a class='rangMembre' href='{URL}users/user/3520/'>@alberic89</a> si vous voyez un bug ou si vous voulez ajouter un smiley !</p>" );
