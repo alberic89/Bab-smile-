@@ -41,6 +41,6 @@ $( ".babcode-smiley-container" ).append( "<p><strong>Oh! Des centaines de smiley
 $( ".babcode-smiley-container" ).append(data);
 $( ".babcode-smiley-container" ).append(data2);
 ///Ajoute une autre petite phrase
-$( ".babcode-smiley-container" ).append( "<p><strong>Envoyez un mp à @alberic89 si vous voyez un bug ou si vous voulez ajouter un smiley !</strong></p>" );
+$( ".babcode-smiley-container" ).append( "<p>Envoyez un mp à <a href='https://brick-a-brack.com/inbox/talk/3520/'>@alberic89</a> si vous voyez un bug ou si vous voulez ajouter un smiley !</p>" );
 };
 main();
