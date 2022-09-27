@@ -13,9 +13,9 @@ for i in range(1000): # teste les 1000 premières urls
 	else :
 		n=str(i)
 	if checkUrl('https://brick-a-brack.com/fichiers/images/smileys/'+n+'.gif')==True:  # si l'url.gif existe, alors l'url est ajoutée à la liste
-		msg += '<img src="/fichiers/images/smileys/'+n+'.gif "alt="" class="babcode-smiley" data-editor="area-babcode" onclick="BaBcode.smiley(this.getAttribute(\'data-editor\'),this.getAttribute(\'data-smiley\'));" data-smiley="<image>https://brick-a-brack.com/fichiers/images/smileys/'+n+'.gif</image>">'
+		msg += '{/fichiers/images/smileys/'+n+'.gif;/fichiers/images/smileys/'+n+'.gif}'
 	if checkUrl('https://brick-a-brack.com/fichiers/images/smileys/' + n + '.png')==True: # si l'url.png existe, alors l'url est ajoutée à la liste
-		msg += '<img src="/fichiers/images/smileys/'+n+'.png "alt="" class="babcode-smiley" data-editor="area-babcode" onclick="BaBcode.smiley(this.getAttribute(\'data-editor\'),this.getAttribute(\'data-smiley\'));" data-smiley="<image>https://brick-a-brack.com/fichiers/images/smileys/'+n+'.png</image>">'
+		msg += '{/fichiers/images/smileys/'+n+'.png;/fichiers/images/smileys/'+n+'.png}'
 file=open("urls.txt","w") # ouvre le fichier
 file.write(msg) # écrit le fichier
 file.close()
