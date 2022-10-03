@@ -13,8 +13,8 @@ if ((document.getElementsByClassName("babcode-smiley-container")[0] === undefine
 	request2.responseType = 'text';
 	request2.onloadend = async function (){
 		data += request2.responseText;
-		data = '<br />' + data.replaceAll('{','<img src="').replaceAll(';','" class="babcode-smiley" data-editor="'+babzone+'" onclick="BaBcode.smiley(this.getAttribute(\'data-editor\'),this.getAttribute(\'data-smiley\'));" data-smiley="<image>https://brick-a-brack.com').replaceAll('}','</image>">') + "<p>Envoyez un mp à <a class='rangMembre' href='/inbox/talk/3520/'>@alberic89</a> si vous voyez un bug ou si vous voulez ajouter un smiley !</p>";
-		document.getElementsByClassName("babcode-smiley-container")[0].insertAdjacentHTML('beforeend',data);
+		data = data.replaceAll('{','<img src="').replaceAll(';','" class="babcode-smiley" data-editor="'+babzone+'" onclick="BaBcode.smiley(this.getAttribute(\'data-editor\'),this.getAttribute(\'data-smiley\'));" data-smiley="').replaceAll('}','">') + "<p>Envoyez un mp à <a class='rangMembre' href='/inbox/talk/3520/'>@alberic89</a> si vous voyez un bug ou si vous voulez ajouter un smiley !</p>";
+		document.getElementsByClassName("babcode-smiley-container")[0].innerHTML = data;
 	}
 	request2.send();
 	console.log('%c\
