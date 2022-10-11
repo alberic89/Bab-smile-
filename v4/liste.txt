@@ -1,0 +1,5 @@
+{<image>https://brick-a-brack.com/fichiers/images/smileys/021.gif</image>;:zzz:}
+{<image>https://brick-a-brack.com/fichiers/images/smileys/215.png</image>;:maxou:}
+{<image>https://brick-a-brack.com/fichiers/images/smileys/072.gif</image>;:tourbillon:}
+{<image>https://brick-a-brack.com/fichiers/images/smileys/127.png</image>;:0.0:}
+{<image>https://brick-a-brack.com/fichiers/images/smileys/207.gif</image>;:candy:}

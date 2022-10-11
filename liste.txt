@@ -10,7 +10,7 @@
 :romain:
 :coquin:
 :saute:
-:mort: 
+:mort:
 :vaderetro:
 :robot:
 :JPP:
@@ -21,7 +21,7 @@
 :groar:
 :explose:
 :cascade:
-:/
+:|
 :pirate:
 :bienvenue:
 :ange:
@@ -46,7 +46,7 @@ B))
 :noel:
 :clown:
 :philippe:
-:nain:   
+:nain:  
 :hihi:
 :minion:
 :laclasse:
@@ -55,7 +55,7 @@ B))
 :ninja:
 :ouch:
 :lapin:
-:niark: 
+:niark:
 :bise:
 :impatient:
 :hourra:
@@ -75,7 +75,7 @@ B))
 :^^:
 :pepe:
 :monocle:
-:achu:  
+:achu: 
 :suspect:
 :ouin:
 :lol:
