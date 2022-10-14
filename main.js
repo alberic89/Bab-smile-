@@ -1,5 +1,6 @@
 if ((document.getElementsByClassName("babcode-smiley-container")[0] === undefined)===false){
-	function babsmile() {
+	document.getElementsByClassName("babcode-smiley-container")[0].innerHTML += "<a id='babsmile-button'> ➕ </a>"
+	document.getElementById('babsmile-button').onclick = function(){
 		let data = '';
 		let babzone = String(document.getElementsByClassName("babcode-editor")[0].id)
 		var url = "https://raw.githubusercontent.com/alberic89/B-b-smile--/main/v4/urls.txt" ;
@@ -19,7 +20,6 @@ if ((document.getElementsByClassName("babcode-smiley-container")[0] === undefine
 		}
 		request2.send();
 	}
-	document.getElementsByClassName("babcode-smiley-container")[0].outerHTML = document.getElementsByClassName("babcode-smiley-container")[0].outerHTML.slice(0,-6) + "<a onclick='babsmile()'> ➕ </a>"
 	console.log('%c\
  #                                                                               \n\
  #  ██████╗  █████╗ ██████╗     ███████╗███╗   ███╗██╗██╗     ███████╗           \n\

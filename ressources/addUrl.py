@@ -5,3 +5,5 @@ msg='<img src="'+url+'"alt="" class="babcode-smiley" data-editor="area-babcode" 
 msgms='<img src="'+url+'"alt="" class="babcode-smiley" data-editor="area-message" onclick="BaBcode.smiley(this.getAttribute(\\\'data-editor\\\'),this.getAttribute(\\\'data-smiley\\\'));" data-smiley="<image>'+url+'</image>">'
 file.write(msg)
 file2.write(msgms)
+file.close()
+file2.close()
