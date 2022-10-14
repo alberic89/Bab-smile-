@@ -4,7 +4,7 @@
 # Instructions d'installation :
 
 ## Chrome (Linux):
-- Allez à [https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b_smile_+.crx?raw=true](https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b_smile_+.crx?raw=true) , un fichier devrait être téléchargé,
+- Allez à [https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b%20smile%20+.crx?raw=true](https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b%20smile%20+.crx?raw=true) , un fichier devrait être téléchargé,
 - Lancez Chrome (ou un dérivé tel que Brave, Vivaldi, etc),
 - Dans Chrome, allez à la page [chrome://extensions/](chrome://extensions/)
 - ***Activez le mode dévellopeur*** (bouton en haut à droite)***, puis redémarrez chrome,***
@@ -17,8 +17,8 @@ https://user-images.githubusercontent.com/90179203/175010893-e1c5d5e0-ba1c-4aa8-
 
 ## Chrome (Window$ & MacOS) :
 - allez à [https://github.com/alberic89/B-b-smile--/archive/refs/heads/chrome.zip](https://github.com/alberic89/B-b-smile--/archive/refs/heads/chrome.zip) ,
-- extrayez le fichier zip dans un dossier dédié que vous aurez créé, genre Chrome/My_extension/, l'important est que vous vous en souveniez et ne le supprimiez pas par erreur, et supprimez les fichiers Bàb_smile_+.crx et .gitattributes,
-- lancez Chrome, allez à la page [chrome://extension](chrome://extension), activez le mode développeur (si ce n'est pas déjà fait), redémarrez Chrome,
+- extrayez le fichier zip dans un dossier dédié que vous aurez créé, par exmple Chrome/My_extension/, l'important est que vous vous en souveniez et ne le supprimiez pas par erreur, et supprimez les fichiers Bàb_smile_+.crx et .gitattributes, ainsi que le dossier .git,
+- lancez Chrome, allez à la page [chrome://extension](chrome://extension), activez le mode développeur (si ce n'est pas déjà fait), ***redémarrez Chrome***,
 - cliquez sur "charger l'extension non empaquetée", et sélectionnez le dossier dans lequel se trouvent les fichiers extraits (manifest.json, main.js, jquery-3.6.0.js et le dossier icons),
 - Et voilà, c'est installé !
 
@@ -38,7 +38,7 @@ Installez-le depuis [https://addons.opera.com/fr/extensions/details/bab-smile/
 ](https://addons.opera.com/fr/extensions/details/bab-smile/)
 
 ## Autres navigateurs :
-- Vérifiez que votre navigateur n'est pas basé sur chromium (si c'est le cas, voyez [là](https://github.com/alberic89/B-b-smile--/edit/main/README.md#chrome-linux) ou [là](https://github.com/alberic89/B-b-smile--/edit/main/README.md#chrome-window--macos-)),
+- Vérifiez que votre navigateur n'est pas basé sur chromium (si c'est le cas, voyez [là](https://github.com/alberic89/B-b-smile--/README.md#chrome-linux) ou [là](https://github.com/alberic89/B-b-smile--/edit/main/README.md#chrome-window--macos-)),
 - Essayez d'installer le fichier [https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b_smile_+.crx?raw=true](https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b_smile_+.crx?raw=true),
 - Envoyez-moi un message par mp sur Bàb, ou par github.
 
