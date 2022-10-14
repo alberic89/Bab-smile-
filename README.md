@@ -38,8 +38,8 @@ Installez-le depuis [https://addons.opera.com/fr/extensions/details/bab-smile/
 ](https://addons.opera.com/fr/extensions/details/bab-smile/)
 
 ## Autres navigateurs :
-- Vérifiez que votre navigateur n'est pas basé sur chromium (si c'est le cas, voyez [là](https://github.com/alberic89/B-b-smile--/README.md#chrome-linux) ou [là](https://github.com/alberic89/B-b-smile--/edit/main/README.md#chrome-window--macos-)),
-- Essayez d'installer le fichier [https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b_smile_+.crx?raw=true](https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b_smile_+.crx?raw=true),
+- Vérifiez que votre navigateur n'est pas basé sur chromium (si c'est le cas, voyez [là](https://github.com/alberic89/B-b-smile--/README.md#chrome-linux) ou [là](https://github.com/alberic89/B-b-smile--/edit/README.md#chrome-window--macos-)),
+- Essayez d'installer le fichier [https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b%20smile%20+.crx?raw=true](https://github.com/alberic89/B-b-smile--/blob/chrome/B%C3%A0b%20smile%20+.crx?raw=true),
 - Envoyez-moi un message par mp sur Bàb, ou par github.
 
 # Envoyer-moi un message si vous voulez que j'adapte cette extension à un autre navigateur ! (je ne les connais pas tous)
