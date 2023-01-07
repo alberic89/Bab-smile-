@@ -1,4 +1,4 @@
-window.onloadend = function () {
+function bbsmile () {
 	if (document.getElementsByClassName("_3_hkBa_editor")[0] != undefined) {
 		document.getElementsByClassName("_3_hkBa_emoji")[0].insertAdjacentHTML('beforebegin','\
 			<style>body{font-family:Arial,Helvetica,sans-serif}\
@@ -38,38 +38,23 @@ window.onloadend = function () {
 		  }
 		}
 
-
-
-	}
-
-
-}
-
-
-
-if ((document.getElementsByClassName("babcode-smiley-container")[0] === undefined)===false){
-	document.getElementsByClassName("_3_hkBa_emoji")[0].insertAdjacentHTML('beforebegin','<a id="babsmile-button"> ➕ </a>')
-	document.getElementById('babsmile-button').onclick = function(){
-		let data = '';
-		let babzone = String(document.getElementsByClassName("babcode-editor")[0].id)
-		var url = "https://raw.githubusercontent.com/alberic89/B-b-smile--/main/v4/urls.txt" ;
+		let data;
+		let htmldata = '';
+		var url = "https://raw.githubusercontent.com/alberic89/B-b-smile--/main/v5/urls.txt" ;
 		var request = new XMLHttpRequest();
 		request.open('GET', url);
 		request.responseType = 'text';
-		request.onloadend = function (){data = request.responseText;};
+		request.onloadend = function (){data = JSON.parse(request.response);
+			for (var i = 1; i < data.lenght; i++) {
+			  htmldata += '<img class="_3_hkBa_emoji BBsmile-emoji" src="https://assets.brickfilms.com/emojis/' + data[i] + '" title="' + data[i] + '">';
+			}
+			htmldata += '<p>Envoyez un mp à <div class="J6DH5G_user J6DH5G_inline "><a class="YcNC0W_action NqeiLa_userPicture  J6DH5G_avatar" title="alberic89" href="/users/VXNlcjozNTIw/alberic89"><div class="NqeiLa_content"><div style="background-image: url(&quot;https://assets.brickfilms.com/user.8368a86a.avif&quot;);"></div><div style="background-image: url(&quot;https://images.weserv.nl/?w=400&amp;url=https%3A%2F%2Fapi.brickfilms.com%2Fimages%2FVXNlcjozNTIw.jpg%3F1664012015&amp;bg=%23FFF&amp;output=webp&amp;q=60&amp;il=&amp;l=&amp;t=fit&amp;default=https%3A%2F%2Fassets.brickfilms.com%2Fblank.gif&quot;);"></div></div></a><a class="YcNC0W_action _2C234G_userlink  J6DH5G_name" href="/users/VXNlcjozNTIw/alberic89">alberic89</a></div> si vous voyez un bug ou si vous voulez ajouter un smiley !</p>';
+			document.getElementsByClassName("BBsmileBOX-content")[0].removeChild(document.getElementsByClassName("BBsmileBOX-content")[0].childNodes[3])
+			document.getElementsByClassName("BBsmileBOX-content")[0].insertAdjacentHTML('beforeend',htmldata)
+			};
 		request.send();
-		var url2 = "https://raw.githubusercontent.com/alberic89/B-b-smile--/main/v4/customs-urls.txt";
-		var request2 = new XMLHttpRequest();
-		request2.open('GET', url2);
-		request2.responseType = 'text';
-		request2.onloadend = async function (){
-			data += request2.responseText;
-			data = data.replaceAll('{','<img src="').replaceAll(';','" class="babcode-smiley" data-editor="'+babzone+'" onclick="BaBcode.smiley(this.getAttribute(\'data-editor\'),this.getAttribute(\'data-smiley\'));" data-smiley="').replaceAll('}','">') + "<p>Envoyez un mp à <a class='rangMembre' href='/inbox/talk/3520/'>@alberic89</a> si vous voyez un bug ou si vous voulez ajouter un smiley !</p>";
-			document.getElementsByClassName("babcode-smiley-container")[0].innerHTML = data;
-		}
-		request2.send();
-	}
-	console.log('%c\
+
+		console.log('%c\
  #                                                                               \n\
  #  ██████╗  █████╗ ██████╗     ███████╗███╗   ███╗██╗██╗     ███████╗           \n\
  #  ██╔══██╗██╔══██╗██╔══██╗    ██╔════╝████╗ ████║██║██║     ██╔════╝     ██╗   \n\
@@ -79,4 +64,10 @@ if ((document.getElementsByClassName("babcode-smiley-container")[0] === undefine
  #  ╚═════╝ ╚═╝  ╚═╝╚═════╝     ╚══════╝╚═╝     ╚═╝╚═╝╚══════╝╚══════╝           \n\
  #                                                                               ',
 'background-image: linear-gradient(black,black);color: green;');
-};
+
+	}
+
+
+}
+
+bbsmile();
