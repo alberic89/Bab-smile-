@@ -5,17 +5,12 @@ def checkUrl(url): # définis la fonction qui permet de tester les urls entrées
 		return True
 	else:
 		return False
-for i in range(1000): # teste les 1000 premières urls
-	if len(str(i))==1: # met i sous la forme xxx
-		n='00'+str(i)
-	elif len(str(i))==2:
-		n='0'+str(i)
-	else :
-		n=str(i)
-	if checkUrl('https://brick-a-brack.com/fichiers/images/smileys/'+n+'.gif')==True:  # si l'url.gif existe, alors l'url est ajoutée à la liste
-		msg += '{/fichiers/images/smileys/'+n+'.gif;/fichiers/images/smileys/'+n+'.gif}'
-	if checkUrl('https://brick-a-brack.com/fichiers/images/smileys/' + n + '.png')==True: # si l'url.png existe, alors l'url est ajoutée à la liste
-		msg += '{/fichiers/images/smileys/'+n+'.png;/fichiers/images/smileys/'+n+'.png}'
+for i in range(1,2001): # teste les 2000 premières urls
+	n = str(i)
+	if checkUrl('https://assets.brickfilms.com/emojis/'+n+'.gif')==True:  # si l'url.gif existe, alors l'url est ajoutée à la liste
+		msg += '{'+n+'.gif}'
+	if checkUrl('https://assets.brickfilms.com/emojis/' + n + '.png')==True: # si l'url.png existe, alors l'url est ajoutée à la liste
+		msg += '{'+n+'.png}'
 file=open("urls.txt","w") # ouvre le fichier
 file.write(msg) # écrit le fichier
 file.close()

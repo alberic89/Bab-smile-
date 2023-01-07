@@ -3,9 +3,9 @@
 
 	"name": "Bàb smile +",
 
-	"version": "4.22.10.14",
+	"version": "5.dev1",
 
-	"description": "Débloque la totalité des smileys sur Brick à Brack !",
+	"description": "Débloque la totalité des smileys sur Brickfilms.com (Brick à Brack) !",
 
 	"author": "alberic89",
 
@@ -20,7 +20,7 @@
 
 	"content_scripts": [
 		{
-			"matches": ["*://brick-a-brack.com/*"],
+			"matches": ["*://brickfilms.com/*"],
 			"js": ["main.js"]
 		}
 	],
