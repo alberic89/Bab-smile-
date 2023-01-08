@@ -1,9 +1,9 @@
 {
-	"manifest_version": 2,
+	"manifest_version": 3,
 
 	"name": "Bàb smile +",
 
-	"version": "5.dev1",
+	"version": "5.1",
 
 	"description": "Débloque la totalité des smileys sur Brickfilms.com (Brick à Brack) !",
 
@@ -22,10 +22,10 @@
 		{
 			"matches": ["*://brickfilms.com/*"],
 			"js": ["main.js"]
+
 		}
 	],
     "permissions": [
-		"*://raw.githubusercontent.com/alberic89/B-b-smile--/main/*",
 		"webRequest"
 	]
 }
