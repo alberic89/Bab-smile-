@@ -16,19 +16,13 @@ for i in range(1, 300):  # teste les 300 premières urls
 	if checkUrl("https://assets.brickfilms.com/emojis/" + n + ".gif") == True:
 		# si l'url.gif existe, alors l'url est ajoutée à la liste
 		msg.append(
-			{"u": n + ".gif", "t": "https://assets.brickfilms.com/emojis/" + n + ".gif"}
+			{"u": n + ".gif", "t": "[img]https://assets.brickfilms.com/emojis/" + n + ".gif[/img]"}
 		)
 	elif checkUrl("https://assets.brickfilms.com/emojis/" + n + ".png") == True:
 		# si l'url.png existe, alors l'url est ajoutée à la liste
 		msg.append(
-			{"u": n + ".png", "t": "https://assets.brickfilms.com/emojis/" + n + ".png"}
+			{"u": n + ".png", "t": "[img]https://assets.brickfilms.com/emojis/" + n + ".png[/img]"}
 		)
-	elif checkUrl("https://assets.brickfilms.com/emojis/" + n + ".svg") == True:
-		# si l'url.svg existe, alors l'url est ajoutée à la liste
-		msg.append(
-			{"u": n + ".svg", "t": "https://assets.brickfilms.com/emojis/" + n + ".svg"}
-		)
-
 file = open("urls.txt", "w")  # ouvre le fichier
 file.write(str(msg).replace("'",'"'))  # écrit le fichier
 file.close()
