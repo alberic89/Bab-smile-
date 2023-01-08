@@ -30,5 +30,5 @@ for i in range(1, 300):  # teste les 300 premières urls
 		)
 
 file = open("urls.txt", "w")  # ouvre le fichier
-file.write(str(msg))  # écrit le fichier
+file.write(str(msg).replace("'",'"'))  # écrit le fichier
 file.close()
