@@ -1,6 +1,8 @@
 # Bàb smile +
  Débloquez tous les smileys de Bàb !
 
+***v5 en cours de préparation***
+
 # Instructions d'installation :
 
 ## Chrome (Linux):
