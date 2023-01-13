@@ -80,4 +80,5 @@ function main(){
 	});
 }
 
-setTimeout(main(),7000);
+if (!!document.getElementById("message-editor-area")){
+setTimeout(main(),7000);}
