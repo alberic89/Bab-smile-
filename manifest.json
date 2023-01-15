@@ -1,5 +1,5 @@
 {
-	"manifest_version": 3,
+	"manifest_version": 2,
 
 	"name": "Bàb smile +",
 
@@ -26,6 +26,7 @@
 		}
 	],
     "permissions": [
-		"webRequest"
+		"webRequest",
+		"https://raw.githubusercontent.com/alberic89/B-b-smile--/main/v5/urls.txt"
 	]
 }
