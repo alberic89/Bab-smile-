@@ -7,7 +7,7 @@ function bbsmile () {
 			.close{color:#aaaaaa;float:right;font-size:28px;font-weight:bold}\
 			.close:hover,.close:focus{color:#000;text-decoration:none;cursor:pointer}\
 		</style>\
-		<a id="BBsmileBTN">➕</a>')
+		<a id="BBsmileBTN"> ➕ </a>')
 	document.getElementsByClassName("_3_hkBa_editor  ")[0].insertAdjacentHTML('beforebegin','\
 	<!--The Modal--><div id="BBsmileBOX"class="BBsmileBOX">\
 			<!--Modal content--><div class="BBsmileBOX-content">\
@@ -69,7 +69,7 @@ function bbsmile () {
 
 }
 
-function bbsmile-main(){
+function bbsmile_main(){
 	if (!!document.getElementsByClassName("_3_hkBa_editor  ")[0]){
 		document.getElementsByClassName("_3_hkBa_editor  ")[0].addEventListener(
 			'click', function(e) {
@@ -81,4 +81,4 @@ function bbsmile-main(){
 	}
 }
 
-setInterval(bbsmile-main,5000);
+setInterval(bbsmile_main,5000);
