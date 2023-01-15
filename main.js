@@ -8,7 +8,7 @@ function bbsmile () {
 			.close:hover,.close:focus{color:#000;text-decoration:none;cursor:pointer}\
 		</style>\
 		<a id="BBsmileBTN">➕</a>')
-	document.getElementById("message-editor-area").insertAdjacentHTML('beforebegin','\
+	document.getElementsByClassName("_3_hkBa_editor  ")[0].insertAdjacentHTML('beforebegin','\
 	<!--The Modal--><div id="BBsmileBOX"class="BBsmileBOX">\
 			<!--Modal content--><div class="BBsmileBOX-content">\
 				<span class="close">&times;</span>\
@@ -47,7 +47,7 @@ function bbsmile () {
 	request.responseType = 'text';
 	request.onloadend = function (){data = JSON.parse(request.response);
 		for (var i = 0; i < data.length; i++) {
-		  htmldata = htmldata + "<img class='_3_hkBa_emoji BBsmile-emoji' onclick='document.getElementsByName(\"message\")[0].value+=\" \"+this.getAttribute(\"title\")+\" \"'src='https://assets.brickfilms.com/emojis/" + data[i]["u"] + "' title='" +  data[i]["t"] +"'>";
+		  htmldata = htmldata + "<img class='_3_hkBa_emoji BBsmile-emoji' onclick='document.getElementsByTagName(\"textarea\")[0].value+=\" \"+this.getAttribute(\"title\")+\" \"'src='https://assets.brickfilms.com/emojis/" + data[i]["u"] + "' title='" +  data[i]["t"] +"'>";
 		}
 		htmldata = htmldata + '<hr><div style ="text-align: center;">Envoyez un mp à <div class="J6DH5G_user J6DH5G_inline "><a class="YcNC0W_action NqeiLa_userPicture  J6DH5G_avatar" title="alberic89" href="/users/VXNlcjozNTIw/alberic89"><div class="NqeiLa_content"><div style="background-image: url(&quot;https://assets.brickfilms.com/user.8368a86a.avif&quot;);"></div><div style="background-image: url(&quot;https://images.weserv.nl/?w=400&amp;url=https%3A%2F%2Fapi.brickfilms.com%2Fimages%2FVXNlcjozNTIw.jpg%3F1664012015&amp;bg=%23FFF&amp;output=webp&amp;q=60&amp;il=&amp;l=&amp;t=fit&amp;default=https%3A%2F%2Fassets.brickfilms.com%2Fblank.gif&quot;);"></div></div></a><a class="YcNC0W_action _2C234G_userlink  J6DH5G_name" href="/users/VXNlcjozNTIw/alberic89">alberic89</a></div> si vous voyez un bug ou si vous voulez ajouter un smiley !</div>';
 		document.getElementsByClassName("BBsmileBOX-content")[0].removeChild(document.getElementsByClassName("BBsmileBOX-content")[0].childNodes[3]);
@@ -69,16 +69,24 @@ function bbsmile () {
 
 }
 
-var BB_ON = false;
 
 function main(){
-	document.getElementById("message-editor-area").addEventListener('click', function(e) {
-		if (BB_ON == false){
-			bbsmile();
-			BB_ON = true;
-		}
-	});
+	if (!!document.getElementsByClassName("_3_hkBa_editor  ")[0]){
+		document.getElementsByClassName("_3_hkBa_editor  ")[0].addEventListener(
+			'click', function(e) {
+				if (!document.getElementById("BBsmileBTN")){
+					bbsmile();
+				}
+			}
+		);
+	}
 }
 
+<<<<<<< Updated upstream
 if (!!document.getElementById("message-editor-area")){
 setTimeout(main(),7000);}
+=======
+setInterval(main,5000);
+
+
+>>>>>>> Stashed changes
