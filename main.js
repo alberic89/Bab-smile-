@@ -69,8 +69,7 @@ function bbsmile () {
 
 }
 
-
-function main(){
+function bbsmile-main(){
 	if (!!document.getElementsByClassName("_3_hkBa_editor  ")[0]){
 		document.getElementsByClassName("_3_hkBa_editor  ")[0].addEventListener(
 			'click', function(e) {
@@ -82,11 +81,4 @@ function main(){
 	}
 }
 
-<<<<<<< Updated upstream
-if (!!document.getElementById("message-editor-area")){
-setTimeout(main(),7000);}
-=======
-setInterval(main,5000);
-
-
->>>>>>> Stashed changes
+setInterval(bbsmile-main,5000);
