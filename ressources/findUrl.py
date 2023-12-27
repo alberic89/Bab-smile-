@@ -3,7 +3,7 @@ import concurrent.futures
 import re
 
 MAX_SEARCH = 300
-MAX_THREADS = 300
+MAX_THREADS = 100
 
 urls = []
 counter = 0
