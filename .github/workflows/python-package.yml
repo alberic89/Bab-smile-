@@ -5,9 +5,9 @@ name: Python package
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ 'main' ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ 'main' ]
 
 
 jobs:
@@ -15,8 +15,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11"]
-        os: ["ubuntu-20.04","windows-2019"]
+        python-version: ['3.11']
+        os: ['ubuntu-20.04','windows-2019']
     runs-on: ${{ matrix.os }} 
     steps:
       - uses: actions/checkout@v3
@@ -30,7 +30,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install Flask PyInstaller
       - name: Build with PyInstaller
-        if: ${{ ${{ matrix.os }} == "ubuntu-20.04" }}
+        if: ${{ matrix.os == 'ubuntu-20.04' }}
         run: |
           echo "[]" > babsmile.json
           pyinstaller babsmilemanager.py -F \
@@ -40,12 +40,12 @@ jobs:
           --console --hide-console minimize-late \
           --icon babsmilemanager/static/favicon.ico
       - name: Build with PyInstaller
-        if: ${{ ${{ matrix.os }} == "windows-2019" }}
+        if: ${{ matrix.os == 'windows-2019' }}
         run: |
           echo "[]" > babsmile.json
           pyinstaller babsmilemanager.py -F \
-          -add-data babsmilemanager/static/:babsmilemanager/static/ \
-          -add-data babsmilemanager/templates/:babsmilemanager/templates/ \
+          -add-data babsmilemanager\static:babsmilemanager\static \
+          -add-data babsmilemanager\templates:babsmilemanager\templates \
           -add-data babsmile.json:babsmile.json  \
           -console -hide-console minimize-late \
           -icon babsmilemanager/static/favicon.ico
