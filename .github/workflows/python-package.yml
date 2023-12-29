@@ -30,13 +30,25 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install Flask PyInstaller
       - name: Build with PyInstaller
+        if: matrix.os == "ubuntu-20.04"
         run: |
+          echo "[]" > babsmile.json
           pyinstaller babsmilemanager.py -F \
           --add-data babsmilemanager/static/:babsmilemanager/static/ \
           --add-data babsmilemanager/templates/:babsmilemanager/templates/ \
           --add-data babsmile.json:babsmile.json  \
           --console --hide-console minimize-late \
           --icon babsmilemanager/static/favicon.ico
+      - name: Build with PyInstaller
+        if: matrix.os == "windows-2019"
+        run: |
+          echo "[]" > babsmile.json
+          pyinstaller babsmilemanager.py -F \
+          -add-data babsmilemanager/static/:babsmilemanager/static/ \
+          -add-data babsmilemanager/templates/:babsmilemanager/templates/ \
+          -add-data babsmile.json:babsmile.json  \
+          -console -hide-console minimize-late \
+          -icon babsmilemanager/static/favicon.ico
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
         with:
