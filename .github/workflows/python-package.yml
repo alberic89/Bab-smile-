@@ -49,4 +49,4 @@ jobs:
         uses: actions/upload-artifact@v4.0.0
         with:
           name: BabSmileManager-${{ matrix.os }}
-          path: dist/babsmilemanager*
+          path: dist/*
