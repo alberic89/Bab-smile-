@@ -31,7 +31,7 @@ jobs:
           python -m pip install Flask PyInstaller
       - name: Build with PyInstaller
         run: |
-          python -m pyinstaller babsmilemanager.py -F \
+          pyinstaller babsmilemanager.py -F \
           --add-data babsmilemanager/static/:babsmilemanager/static/ \
           --add-data babsmilemanager/templates/:babsmilemanager/templates/ \
           --add-data babsmile.json:babsmile.json  \
