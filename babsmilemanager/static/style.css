@@ -1,0 +1,22 @@
+.smiley-element {
+  margin: 20px 0px;
+  display: block;
+  border: #489cd5 5px solid;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.smiley {
+  margin-right: 15px;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.smiley-code {
+  vertical-align: baseline;
+  margin-right: 15px;
+}
+
+.smiley-h3 {
+  margin: 5px 0px 0px 10px;
+}

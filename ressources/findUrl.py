@@ -2,6 +2,7 @@ import requests
 import concurrent.futures
 import re
 
+<<<<<<< Updated upstream
 MAX_SEARCH = 300
 MAX_THREADS = 100
 
@@ -27,6 +28,30 @@ def generateUrls(nbmax):
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
     future_to_url = {executor.submit(checkUrl, url): url for url in generateUrls(MAX_SEARCH)}
+=======
+urls = []
+counter = 0
+
+def trier_liste(liste):
+    def trier_cle(element):
+        chiffres = re.findall(r'\d+', element)
+        return [int(chiffre) for chiffre in chiffres]
+    return sorted(liste, key=trier_cle)
+
+def checkUrl(url):
+    if requests.head(url).status_code < 400:
+        return True
+    else:
+        return False
+
+def generateUrls(nbmax):
+    for i in range(1,nbmax):
+        yield f"https://assets.brickfilms.com/emojis/{i}.gif"
+        yield f"https://assets.brickfilms.com/emojis/{i}.png"
+
+with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
+    future_to_url = {executor.submit(checkUrl, url): url for url in generateUrls(300)}
+>>>>>>> Stashed changes
     for future in concurrent.futures.as_completed(future_to_url):
         url = future_to_url[future]
         try:

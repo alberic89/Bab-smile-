@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <title>Bàb smile +</title>
+    <body>
+    <section class="content">
+      <header>
+        <h1>Bàb smile +</h1>
+        <h2>Smiley manager</h2>
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% if diff %}
+        <script>
+window.addEventListener('click',
+  function(e,s,r){
+    if(e.target.nodeName==='CODE'&&e.detail===3){
+      s=window.getSelection();
+      s.removeAllRanges();
+      r=document.createRange();
+      r.selectNodeContents(e.target);
+      s.addRange(r);
+      copierTexte(event)
+    }
+  }
+);
+        </script>
+        <p>Cliquez sur le bouton pour copier le code et envoyez-le à <a href="https://brickfilms.com/chats/VXNlcjozNTIw/alberic89">alberic89</a> par MP.</p>
+        <button id="copy" onclick="copierTexte(event)" >Copier</button>
+        <script>
+copierTexte = (e) => {
+  navigator.clipboard.writeText(document.getElementById("diff").textContent).then(() => {
+    document.getElementById("copy").textContent = "Copié ! ✓";
+  })
+}
+        </script>
+        <pre class="diff-pre"><code class="diff" id="diff">{{diff}}</code></pre>
+      {% endif %}
+      <div class="list-container">
+        <form method="post" class="smiley-form">
+          <input class="smiley-save" type="submit" value="Valider !"/>
+          <ul class="smiley-list">
+            {% for smiley in smileys %}
+            <li class="smiley-element">
+                <a href="/#{{smiley.id}}" ><h3 class="smiley-h3" id="{{smiley.id}}">#{{smiley.id}} {{smiley.code}}</h3></a>
+                <img class="smiley" src="{{smiley.url}}" alt="{{smiley.code if smiley.code != '' else smiley.url}}" />
+                <input class="smiley-code" type="text" name="{{smiley.id}}" value="{{smiley.code}}"/>
+            </li>
+            {% endfor %}
+          </ul>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <span><a href="/page/licence">Copyleft 2024 alberic89 – MIT License – Made with ♥ and Flask.</a></span>
+    </footer>
+    </body>
+</html>
