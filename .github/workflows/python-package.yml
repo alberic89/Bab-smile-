@@ -44,6 +44,7 @@ jobs:
         if: ${{ matrix.os == 'windows-2019' }}
         run: |
           echo "[]" > babsmile.json
+          mkdir dist
           pyinstaller babsmilemanager.py --distpath .\dist -F --add-data babsmilemanager\static:babsmilemanager\static --add-data babsmilemanager\templates:babsmilemanager\templates --add-data babsmile.json:babsmile.json  --console -hide-console minimize-late --icon babsmilemanager/static/favicon.ico
           ls dist
       - name: Upload a Build Artifact
