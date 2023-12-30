@@ -15,22 +15,46 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ['3.11']
-        os: ['ubuntu-20.04','windows-2019']
-    runs-on: ${{ matrix.os }} 
+        python-version: ['3.12']
+        os: ['linux-amd64','windows-amd64']
+    runs-on: 'ubuntu-20.04'
     steps:
       - uses: actions/checkout@v3
+      - name: Set up WineHQ-devel
+        if: ${{ matrix.os == 'windows-amd64' }}
+        run: |
+          sudo dpkg --add-architecture i386 
+          sudo mkdir -pm755 /etc/apt/keyrings
+          sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+          sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/focal/winehq-focal.sources
+          sudo apt-get update
+          sudo apt-get install --install-recommends wine-devel -y
+          sudo apt-get install --install-recommends winehq-devel -y
+          sudo apt-get install unzip -y
+          winecfg /v win8
       - name: Set up Python ${{ matrix.python-version }}
+        if: ${{ matrix.os == 'linux-amd64' }}
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
-      - name: Install dependencies
+      - name: Set up Python ${{ matrix.python-version }}
+        if: ${{ matrix.os == 'windows-amd64' }}
         run: |
-          python -m pip install --upgrade pip
+          wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-amd64.exe
+          wine python-3.12.1-amd64.exe /quiet AppendPath=1 Include_doc=0 Include_tcltk=0 Include_test=0
+      - name: Install dependencies
+        if: ${{ matrix.os == 'linux-amd64' }}
+        run: |
+          python -m ensurepip --upgrade
           python -m pip install Flask PyInstaller
+      - name: Install dependencies
+        if: ${{ matrix.os == 'windows-amd64' }}
+        run: |
+          wine python -m ensurepip --upgrade
+          wine python -m pip install Flask PyInstaller
       - name: Build with PyInstaller
-        if: ${{ matrix.os == 'ubuntu-20.04' }}
+        if: ${{ matrix.os == 'linux-amd64' }}
         run: |
           echo "[]" > babsmile.json
           pyinstaller babsmilemanager.py -F \
@@ -41,10 +65,16 @@ jobs:
           --icon babsmilemanager/static/favicon.ico
           chmod +x dist/babsmilemanager
       - name: Build with PyInstaller
-        if: ${{ matrix.os == 'windows-2019' }}
+        if: ${{ matrix.os == 'windows-amd64' }}
         run: |
           echo "[]" > babsmile.json
-          pyinstaller babsmilemanager.py -F --add-data babsmilemanager\static:babsmilemanager\static --add-data babsmilemanager\templates:babsmilemanager\templates --add-data babsmile.json:babsmile.json  --console -hide-console minimize-late --icon babsmilemanager/static/favicon.ico
+          wine pyinstaller babsmilemanager.py -F \
+          --add-data babsmilemanager/static/:babsmilemanager/static/ \
+          --add-data babsmilemanager/templates/:babsmilemanager/templates/ \
+          --add-data babsmile.json:babsmile.json  \
+          --console --hide-console minimize-late \
+          --icon babsmilemanager/static/favicon.ico
+          ls dist
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
         with:
