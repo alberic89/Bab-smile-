@@ -23,12 +23,15 @@ jobs:
       - name: Set up WineHQ-devel
         if: ${{ matrix.os == 'windows-amd64' }}
         run: |
+          cat /etc/os-release
+          cat /etc/apt/sources.list
+          tree /etc/apt/sources.list.d/
           sudo dpkg --add-architecture i386 
           sudo mkdir -pm755 /etc/apt/keyrings
           sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
           sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/focal/winehq-focal.sources
           sudo apt update
-          sudo apt install wine-devel-i386 wine-devel winehq-devel -y
+          sudo apt install winehq-devel -y
           winecfg /v win8
       - name: Set up Python ${{ matrix.python-version }}
         if: ${{ matrix.os == 'linux-amd64' }}
