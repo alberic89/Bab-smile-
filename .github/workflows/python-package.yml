@@ -27,8 +27,8 @@ jobs:
           sudo mkdir -pm755 /etc/apt/keyrings
           sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
           sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/focal/winehq-focal.sources
-          sudo apt-get update
-          sudo apt-get install winehq-devel -y
+          sudo apt update
+          sudo apt install wine-devel winehq-devel -y
           winecfg /v win8
       - name: Set up Python ${{ matrix.python-version }}
         if: ${{ matrix.os == 'linux-amd64' }}
