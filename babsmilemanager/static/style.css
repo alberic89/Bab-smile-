@@ -20,3 +20,10 @@
 .smiley-h3 {
   margin: 5px 0px 0px 10px;
 }
+
+.diff-pre {
+border: 5px #489cd5 dotted;
+border-radius: 15px;
+width: fit-content;
+padding: 10px;
+}
