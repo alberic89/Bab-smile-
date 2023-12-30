@@ -1,32 +1,32 @@
 {
-	"manifest_version": 2,
+    "manifest_version": 2,
 
-	"name": "Bàb smile +",
+    "name": "Bàb Smile +",
 
-	"version": "5.1",
+    "version": "5.0-pre",
 
-	"description": "Débloque la totalité des smileys sur Brickfilms.com (Brick à Brack) !",
+    "description": "Débloque la totalité des smileys sur Brickfilms.com (Brick à Brack) !",
 
-	"author": "alberic89",
+    "author": "alberic89",
 
 
-	"icons": {
-		"16": "icons/logo16.png",
-		"32": "icons/logo32.png",
-		"48": "icons/logo48.png",
-		"96": "icons/logo96.png",
-		"128": "icons/logo128.png"
-	},
+    "icons": {
+        "16": "icons/logo16.png",
+        "32": "icons/logo32.png",
+        "48": "icons/logo48.png",
+        "96": "icons/logo96.png",
+        "128": "icons/logo128.png"
+    },
 
-	"content_scripts": [
-		{
-			"matches": ["*://brickfilms.com/*"],
-			"js": ["main.js"]
+    "content_scripts": [
+        {
+            "matches": ["*://brickfilms.com/*"],
+            "js": ["main.js"]
 
-		}
-	],
+        }
+    ],
     "permissions": [
-		"webRequest",
-		"https://raw.githubusercontent.com/alberic89/B-b-smile--/main/v5/urls.txt"
-	]
+        "webRequest",
+        "https://raw.githubusercontent.com/alberic89/B-b-smile--/main/download/liste-5-0.json"
+    ]
 }
