@@ -11,24 +11,52 @@ on:
 
 
 jobs:
-  build-linux:
+  build:
     strategy:
       fail-fast: false
       matrix:
         python-version: ['3.12']
+        os: ['linux-amd64','windows-amd64']
     runs-on: 'ubuntu-20.04'
     steps:
       - uses: actions/checkout@v3
+      - name: Set up WineHQ-devel
+        if: ${{ matrix.os == 'windows-amd64' }}
+        run: |
+          cat /etc/os-release
+          cat /etc/apt/sources.list
+          tree /etc/apt/sources.list.d/
+          sudo rm /etc/apt/sources.list.d/microsoft-prod.*
+          sudo dpkg --add-architecture i386 
+          sudo mkdir -pm755 /etc/apt/keyrings
+          sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+          sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/focal/winehq-focal.sources
+          sudo apt update
+          sudo apt install --install-recommends wine-devel winehq-devel -y
+          winecfg /v win8
       - name: Set up Python ${{ matrix.python-version }}
+        if: ${{ matrix.os == 'linux-amd64' }}
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
+      - name: Set up Python ${{ matrix.python-version }}
+        if: ${{ matrix.os == 'windows-amd64' }}
+        run: |
+          wget https://www.python.org/ftp/python/3.12.1/python-3.12.1-amd64.exe
+          wine python-3.12.1-amd64.exe /quiet AppendPath=1 Include_doc=0 Include_tcltk=0 Include_test=0
       - name: Install dependencies
+        if: ${{ matrix.os == 'linux-amd64' }}
         run: |
           python -m ensurepip --upgrade
           python -m pip install Flask PyInstaller
+      - name: Install dependencies
+        if: ${{ matrix.os == 'windows-amd64' }}
+        run: |
+          wine python -m ensurepip --upgrade
+          wine python -m pip install Flask PyInstaller
       - name: Build with PyInstaller
+        if: ${{ matrix.os == 'linux-amd64' }}
         run: |
           echo "[]" > babsmile.json
           pyinstaller babsmilemanager.py -F \
@@ -38,18 +66,6 @@ jobs:
           --console --hide-console minimize-late \
           --icon babsmilemanager/static/favicon.ico
           chmod +x dist/babsmilemanager
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.0.0
-        with:
-          name: BabSmileManager-linux-amd64
-          path: dist/*
-  build-windows:
-    strategy:
-      fail-fast: false
-    runs-on: 'ubuntu-latest'
-    container: docker.io/alberic89/wine-devel-python:latest
-    steps:
-      - uses: actions/checkout@v3
       - name: Build with PyInstaller
         if: ${{ matrix.os == 'windows-amd64' }}
         run: |
@@ -60,8 +76,9 @@ jobs:
           --add-data babsmile.json:babsmile.json  \
           --console --hide-console minimize-late \
           --icon babsmilemanager/static/favicon.ico
+          ls dist
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
         with:
-          name: BabSmileManager-windows-amd64
+          name: BabSmileManager-${{ matrix.os }}
           path: dist/*
