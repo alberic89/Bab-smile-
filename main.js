@@ -73,12 +73,20 @@ function bbsmile () {
 
 }
 
+var images = document.getElementsByClassName("tU_oOG_image");
+
 function bbsmile_loop(){
     if (!!document.getElementsByClassName("_3_hkBa_editor  ")[0]){
         if (!document.getElementById("BBsmileBTN")){
             bbsmile();
         }
+        images = document.getElementsByClassName("tU_oOG_image");
+        for (var image = 0; image < images.length; image++) {
+            if (!images[image].src.includes("&n=-1")) {
+                images[image].src += "&n=-1";
+            }
+        }
     }
 }
 
-setInterval(bbsmile_loop,10000);
+setInterval(bbsmile_loop,5000);
