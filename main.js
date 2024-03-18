@@ -1,5 +1,5 @@
 function bbsmile () {
-    document.getElementsByClassName("_3_hkBa_emoji")[0].insertAdjacentHTML('beforebegin','\
+    document.getElementsByClassName("_emoji_uu2se_93")[0].insertAdjacentHTML('beforebegin','\
         <style>body{font-family:Arial,Helvetica,sans-serif}\
             .BBsmileBOX{display:none;position:fixed;z-index:1;padding-top:100px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}\
             .BBsmileBOX-content{background-color:#fefefe;margin:auto;padding:20px;border:1px solid#888;width:80%;padding-bottom: 20px;margin-bottom: 150px;}\
@@ -8,7 +8,7 @@ function bbsmile () {
             .close:hover,.close:focus{color:#000;text-decoration:none;cursor:pointer}\
         </style>\
         <a id="BBsmileBTN"> ➕ </a>')
-    document.getElementsByClassName("_3_hkBa_editor  ")[0].insertAdjacentHTML('beforebegin','\
+    document.getElementsByClassName("_editor_uu2se_1")[0].insertAdjacentHTML('beforebegin','\
     <!--The Modal--><div id="BBsmileBOX"class="BBsmileBOX">\
             <!--Modal content--><div class="BBsmileBOX-content">\
                 <span class="close">&times;</span>\
@@ -73,14 +73,14 @@ function bbsmile () {
 
 }
 
-var images = document.getElementsByClassName("tU_oOG_image");
+var images = document.getElementsByClassName("_image_ulkvi_70");
 
 function bbsmile_loop(){
-    if (!!document.getElementsByClassName("_3_hkBa_editor  ")[0]){
+    if (!!document.getElementsByClassName("_editor_uu2se_1")[0]){
         if (!document.getElementById("BBsmileBTN")){
             bbsmile();
         }
-        images = document.getElementsByClassName("tU_oOG_image");
+        images = document.getElementsByClassName("_image_ulkvi_70");
         for (var image = 0; image < images.length; image++) {
             if (!images[image].src.includes("&n=-1")) {
                 images[image].src += "&n=-1";
