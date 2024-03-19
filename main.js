@@ -48,10 +48,10 @@ function bbsmile () {
     request.onloadend = function (){data = JSON.parse(request.response);
         for (var i = 0; i < data.length; i++) {
             if (data[i]["code"] == "") {
-                htmldata = htmldata + "<img class='_3_hkBa_emoji BBsmile-emoji' onclick='document.getElementsByTagName(\"textarea\")[0].value+=\" \"+this.getAttribute(\"title\")+\" \"'src='" + data[i]["url"] + "' title='[img]" +  data[i]["url"] +"[/img]'>";
+                htmldata = htmldata + "<img class='_emoji_uu2se_93 BBsmile-emoji' onclick='document.getElementsByTagName(\"textarea\")[0].value+=\" \"+this.getAttribute(\"title\")+\" \"'src='" + data[i]["url"] + "' title='[img]" +  data[i]["url"] +"[/img]'>";
             }
             else {
-                htmldata = htmldata + "<img class='_3_hkBa_emoji BBsmile-emoji' onclick='document.getElementsByTagName(\"textarea\")[0].value+=\" \"+this.getAttribute(\"title\")+\" \"'src='" + data[i]["url"] + "' title='" +  data[i]["code"] +"'>";
+                htmldata = htmldata + "<img class='_emoji_uu2se_93 BBsmile-emoji' onclick='document.getElementsByTagName(\"textarea\")[0].value+=\" \"+this.getAttribute(\"title\")+\" \"'src='" + data[i]["url"] + "' title='" +  data[i]["code"] +"'>";
             }
         }
         htmldata = htmldata + '<hr><div style ="text-align: center;">Envoyez un mp à <div class="J6DH5G_user J6DH5G_inline "><a class="YcNC0W_action NqeiLa_userPicture  J6DH5G_avatar" title="alberic89" href="/users/VXNlcjozNTIw/alberic89"><div class="NqeiLa_content"><div class="NqeiLa_contentItem" style="background-image: url(&quot;https://brickfilms.com/user.8368a86a.avif&quot;);"></div><div class="NqeiLa_contentItem" style="background-image: url(&quot;https://images.weserv.nl/?w=400&amp;url=https%3A%2F%2Fapi.brickfilms.com%2Fimages%2FVXNlcjozNTIw.jpg%3F1690538688&amp;bg=%23FFF&amp;output=webp&amp;q=60&amp;il=&amp;l=&amp;t=fit&amp;default=https%3A%2F%2Fbrickfilms.com%2Fblank.gif&quot;);"></div></div></a><a class="YcNC0W_action _2C234G_userlink  J6DH5G_name" title="alberic89" href="/chats/VXNlcjozNTIw/alberic89">alberic89</a></div> si vous voyez un bug ou si vous voulez ajouter un smiley !</div>';
