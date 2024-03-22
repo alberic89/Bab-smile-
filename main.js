@@ -13,11 +13,11 @@ function insertSmiley (event) {
 
 
 function bbsmile () {
-    document.getElementsByClassName("_3_hkBa_navbar")[0].firstChild.firstChild.insertAdjacentHTML('beforeend','\
+    document.getElementsByClassName("_emoji_uu2se_93")[0].firstChild.firstChild.insertAdjacentHTML('beforeend','\
         <span id="BBsmileBTN" class="_3_hkBa_button" title="BàB Smile +">\
         <svg class="svg-inline--fa" width="17.212" height="19.07" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="m2.1743 16.686c-5.1307-5.4613-0.87544-16.686 6.3257-16.686 7.3057 0 11.616 11.724 6.1855 16.826-3.2468 3.0502-9.5807 2.9793-12.511-0.14014z" fill="none"/><path d="m2.1743 16.686c-5.1307-5.4613-0.87544-16.686 6.3257-16.686 7.3057 0 11.616 11.724 6.1855 16.826-3.2468 3.0502-9.5807 2.9793-12.511-0.14014zm8.0757 0.60872c-1.2375-0.23835-3.2625-0.23835-4.5 0s-0.225 0.43337 2.25 0.43337 3.4875-0.19502 2.25-0.43337zm5.555-7.1235c0.26734-4.6712 0.05125-5.3956-1.75-5.8666-1.1303-0.29557-2.055-1.1599-2.055-1.9208 0-0.91433-1.1867-1.3834-3.5-1.3834-2.3133 0-3.5 0.46904-3.5 1.3834 0 0.76085-0.9 1.6187-2 1.9064-2.0351 0.53219-3.0594 9.3175-1.2924 11.085 3.601 3.601 13.809-0.1669 14.097-5.2035zm-9.1505 3.0792c-0.25494-0.4125 0.57553-0.75 1.8455-0.75s2.1004 0.3375 1.8455 0.75c-0.59964 0.97023-3.0913 0.97023-3.691 0zm-1.6545-4.25c0-0.55 0.45-1 1-1s1 0.45 1 1-0.45 1-1 1-1-0.45-1-1zm5 0c0-0.55 0.45-1 1-1s1 0.45 1 1-0.45 1-1 1-1-0.45-1-1z" fill="currentColor"/><path d="m6.6545 13.25c-0.25494-0.4125 0.57553-0.75 1.8455-0.75s2.1004 0.3375 1.8455 0.75c-0.59964 0.97023-3.0913 0.97023-3.691 0zm-1.6545-4.25c0-0.55 0.45-1 1-1s1 0.45 1 1-0.45 1-1 1-1-0.45-1-1zm5 0c0-0.55 0.45-1 1-1s1 0.45 1 1-0.45 1-1 1-1-0.45-1-1z" fill="currentColor"/></svg>\
         </span>');
-    document.getElementsByClassName("_3_hkBa_editor")[0].insertAdjacentHTML('beforebegin','\
+    document.getElementsByClassName("_editor_uu2se_1")[0].insertAdjacentHTML('beforebegin','\
     <div id="BBsmileBOX" class="BBsmileBOX">\
         <div id="BBsmileBOX-content" class="BBsmileBOX-content">\
             <span class="BBsmileBOXclose">&times;</span>\
@@ -77,7 +77,7 @@ function bbsmile () {
     request.responseType = 'text';
     request.onloadend = function (){const data = JSON.parse(request.response);
         const perfect_smiley = document.createElement("img");
-        perfect_smiley.setAttribute("class","_3_hkBa_emoji BBsmile-emoji");
+        perfect_smiley.setAttribute("class","_emoji_uu2se_93 BBsmile-emoji");
         for (var i = 0; i < data.length; i++) {
             const smiley = perfect_smiley.cloneNode(false);
             smiley.setAttribute("src",data[i]['url']);
@@ -148,7 +148,7 @@ function bbsmile () {
 
 
 function bbgif(){
-    const images = document.getElementsByClassName("tU_oOG_image");
+    const images = document.getElementsByClassName("_image_ulkvi_70");
     for (var image = 0; image < images.length; image++) {
         if (!images[image].src.includes("&n=-1")) {
             images[image].src += "&n=-1";
